@@ -10,6 +10,11 @@ zstyle :compinstall filename '/home/wyrdvans/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+
+# Set Editor
+EDITOR='emacs'
+
+# Setup prompt
 autoload -U colors && colors
 PROMPT="%{$fg[magenta]%}(%{$fg[cyan]%}%n@%m%{$reset_color%}: %{$fg[yellow]%}%~%{$fg[magenta]%})%{$reset_color%}%# " # default prompt
 RPROMPT="%{$fg[magenta]%}[%{$fg[yellow]%}%D{%R %m/%d/%Y}%{$fg[magenta]%}]%{$reset_color%}" # prompt for right side of screen
