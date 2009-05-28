@@ -2,3 +2,6 @@
 # Place environment variables here.
 
 export EDITOR="emacs"
+
+typeset -U path
+path=(. ~/bin $path)
