@@ -12,7 +12,11 @@ compinit
 # End of lines added by compinstall
 
 # Set Editor
-EDITOR='emacs'
+export EDITOR="emacs"
+
+if [[ -r ~/.aliasrc ]]; then
+    . ~/.aliasrc
+fi
 
 # Setup prompt
 autoload -U colors && colors
