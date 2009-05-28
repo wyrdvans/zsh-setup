@@ -11,9 +11,6 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-# Set Editor
-export EDITOR="emacs"
-
 if [[ -r ~/.aliasrc ]]; then
     . ~/.aliasrc
 fi
