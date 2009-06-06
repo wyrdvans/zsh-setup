@@ -1,1 +1,56 @@
 # My Alias file.
+
+## Safety ##
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+
+## Improved output ##
+alias df='df -h'
+alias dirsize='du -hs'
+alias du='du -h'
+
+## Git ##
+alias gb='git branch'
+alias gba='git branch -a'
+alias gc='git commit -v'
+alias gd='git diff | $EDITOR'
+alias gl='git pull'
+alias gp='git push'
+alias gs='git status'
+
+# Uncompress a file. Also see package unp.
+extract () {
+   if [ -f $1 ] ; then
+      case $1 in
+         *.tar.lzma)  lzma -vcd $1 | tar -xvf- ;;
+         *.tar.bz2)   tar xjf $1 ;;
+         *.tar.gz)    tar xzf $1 ;;
+         *.bz2)       bunzip2 $1 ;;
+         *.rar)       rar x $1 ;;
+         *.gz)        gunzip $1 ;;
+         *.tar)       tar xf $1 ;;
+         *.tbz2)      tar xjf $1 ;;
+         *.tgz)       tar xzf $1 ;;
+         *.zip)       unzip $1 ;;
+         *.Z)         uncompress $1 ;;
+         *.7z)        7z x $1 ;;
+         *)           echo "'$1' cannot be extracted via extract()" ;;
+      esac
+   else
+      echo "'$1' is not a valid file"
+   fi
+}
+
+# Automaticaly use sudo for non-writable files.
+emacs () {
+    if [ -f "$@" ]; then
+        if [ -w "$@" ]; then
+            $EDITOR -nw "$@"
+        else
+            sudo $EDITOR -nw "$@"
+        fi
+    else
+        $EDITOR "$@"
+    fi
+}

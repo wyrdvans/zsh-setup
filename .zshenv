@@ -4,4 +4,4 @@
 export EDITOR="emacs"
 
 typeset -U path
-path=(. ~/bin $path)
+path=(. ~/bin /opt/local/bin /opt/local/sbin $path)
