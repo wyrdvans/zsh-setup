@@ -14,6 +14,9 @@ compinit
 if [[ -r ~/.aliasrc ]]; then
     . ~/.aliasrc
 fi
+if [[ -r ~/.aweber.aliases ]]; then
+    . ~/.aweber.aliases
+fi
 
 # Setup prompt
 autoload -U colors && colors
