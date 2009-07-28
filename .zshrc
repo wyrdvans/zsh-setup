@@ -11,11 +11,22 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+# Load Aliases
 if [[ -r ~/.aliasrc ]]; then
     . ~/.aliasrc
 fi
 if [[ -r ~/.aweber.aliases ]]; then
     . ~/.aweber.aliases
+fi
+
+# Load functions
+if [ -d ~/.zfunc ]; then
+    fpath=($fpath ~/.zfunc)
+    autoload -U ~/.zfunc/*(:t)
+fi
+if [ -d ~/.aweber.zfunc ]; then
+    fpath=($fpath ~/.aweber.zfunc)
+    autoload -U ~/.aweber.zfunc/*(:t)
 fi
 
 # Setup prompt
