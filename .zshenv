@@ -10,7 +10,7 @@ case "$SYSTEM_TYPE" in
         ;;
     'Darwin')
         export EDITOR="/Applications/Emacs.app/Contents/MacOS/Emacs"
-        path=(. ~/bin /opt/local/bin /opt/local/sbin $path)
+        path=(. ~/bin /usr/local/bin /opt/local/bin /opt/local/sbin $path)
         ;;
 esac
 
