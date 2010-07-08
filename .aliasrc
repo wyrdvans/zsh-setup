@@ -19,6 +19,10 @@ alias gl='git pull'
 alias gp='git push'
 alias gs='git status'
 
+## Emacs ##
+alias em='emacsclient -c'
+alias et='emacsclient -t'
+
 # Uncompress a file. Also see package unp.
 extract () {
    if [ -f $1 ] ; then
@@ -43,14 +47,19 @@ extract () {
 }
 
 # Automaticaly use sudo for non-writable files.
-emacs () {
-    if [ -f "$@" ]; then
-        if [ -w "$@" ]; then
-            $EDITOR -nw "$@"
-        else
-            sudo $EDITOR -nw "$@"
-        fi
-    else
-        $EDITOR "$@"
-    fi
-}
+# emacs () {
+#     if [ $# -eq 0 ]; then
+#         echo "ALT Edit"
+#         $ALTERNATE_EDITOR
+#     else
+#         if [ -f "$@" ]; then
+#             if [ -w "$@" ]; then
+#                 $EDITOR "$@"
+#             else
+#                 sudo $ALTERNATE_EDITOR "$@"
+#             fi
+#         else
+#             $EDITOR "$@"
+#         fi
+#     fi
+# }
